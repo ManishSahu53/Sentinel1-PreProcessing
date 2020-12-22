@@ -18,3 +18,23 @@ This repo is used to process sentinel1 data and put COGs in S3
 
 8. Done, Impory by 
     >import snappy
+    
+    
+## Processing Step
+1. **Apply orbit file**: Updates orbit metadata with a restituted orbit file.
+2. **GRD border noise removal**: Removes low intensity noise and invalid data on scene edges. (As of January 12, 2018)
+3. **Thermal noise removal**: Removes additive noise in sub-swaths to help reduce discontinuities between sub-swaths for scenes in multi-swath acquisition modes. (This operation cannot be applied to images produced before July 2015)
+4. **Radiometric calibration**: Computes backscatter intensity using sensor calibration parameters in the GRD metadata.
+5. **Terrain correction (orthorectification)**: Converts data from ground range geometry, which does not take terrain into account, to σ° using the SRTM 30 meter DEM or the ASTER DEM for high latitudes (greater than 60° or less than -60°).
+
+## Resources
+1. Detail Infor about resource, data files: https://github.com/azavea/noaa-flood-mapping/issues/39
+1. Python Snappy Peocessing: https://github.com/wajuqi/Sentinel-1-preprocessing-using-Snappy/blob/master/s1_preprocessing.py
+2. AWS S3 bucket: https://registry.opendata.aws/sentinel-1/
+3. File Name format: https://roda.sentinel-hub.com/sentinel-s1-l1c/GRD/readme.html
+4. Processing using PySAR: https://github.com/johntruckenbrodt/pyroSAR/issues/107
+5. Forum: https://forum.sentinel-hub.com/t/using-aws-s1-grd-data-for-sar-processing/2220/2
+6. Search and Downloading S1 dataser: https://github.com/prodes-amz/aws_imagery_pack
+7. SAFE format specifications:https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/data-formats/safe-specification
+
+## 
