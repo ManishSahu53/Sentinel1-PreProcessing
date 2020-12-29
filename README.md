@@ -37,4 +37,14 @@ This repo is used to process sentinel1 data and put COGs in S3
 6. Search and Downloading S1 dataser: https://github.com/prodes-amz/aws_imagery_pack
 7. SAFE format specifications:https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/data-formats/safe-specification
 
-## 
+## Time to Process
+1. Orbit correction - 30.4 s
+2. Thermal Noise Removal - 4min 14s
+3. Calibration - 4min 4s
+4. Multi look - 3min 7s
+5. Terrain Correction - 8min 1s
+6. Ortho rectification - 2min 59s
+7. Speckle Filter - 3min 8s
+
+Total Time - ~26min
+
